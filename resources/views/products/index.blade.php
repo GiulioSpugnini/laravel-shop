@@ -2,7 +2,9 @@
 
 @section('content')
     <div class="container">
-        <a class="btn btn-sm btn-success m-4" href="{{ route('products.create') }}">aggiungi</a>
+        <div class="d-flex justify-content-end">
+            <a class="btn btn-sm btn-success m-4" href="{{ route('products.create') }}">Aggiungi</a>
+        </div>
 
         <div id="product-gallery" class="row g-5">
             @foreach ($products as $product)
