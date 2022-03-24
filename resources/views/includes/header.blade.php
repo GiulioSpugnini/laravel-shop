@@ -9,11 +9,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link @if (Route::currentRouteName() === 'home') active @endif" aria-current="page"
+                        <a class="nav-link @if (Route::currentRouteName() === 'home') active @endif"
                             href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @if (Route::currentRouteName() === 'products.index || comics.show') active @endif" aria-current="page"
+                        <a class="nav-link @if (Route::currentRouteName() === 'products.index' || 'products.show') active @endif"
                             href="{{ route('products.index') }}">Products</a>
                     </li>
                 </ul>
