@@ -1,7 +1,19 @@
 @extends('layouts.main')
 
 @section('content')
+<<<<<<< HEAD
     <a class="btn btn-sm btn-success" href="{{ route('products.create') }}">aggiungi</a>
+=======
+    <div class="container">
+        <div id="product-gallery" class="row g-5">
+            @foreach ($products as $product)
+            @include('includes.card')
+            @endforeach
+        </div>
+    </div>
+@endsection
+    <a class="btn btn-sm btn-success"  href="{{ route('products.create') }}">aggiungi</a>
+>>>>>>> 8124fefc22918e3602764e22631ff29b48dcf4a0
     <ul>
         @foreach ($products as $product)
             <li>
