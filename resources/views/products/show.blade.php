@@ -21,6 +21,7 @@
 
                 <input type="submit" value="Cancella" class="btn btn-sm btn-danger shadow-sm">
             </form>
+
         </div>
     </div>
 @endsection

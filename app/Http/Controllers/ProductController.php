@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+
 
 use App\Models\Product;
 
@@ -26,18 +28,33 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Product $product)
     {
-        //
+        $request->validate([
+            'name' => ['required','string','min:1', Rule::unique('product')->ignore($product->id)],
+            'description' => 'required|sring|min:3 max:50',
+            'price' => 'required|numeric|min:0',
+            'image' => 'required|string|nullable',
+        ]);
+
+        $data = $request->all();
+
+        $product = new Product();
+        $product->fill($data);
+        $product->save();
+
+        return redirect()->route('products.show', $product);
+
     }
 
     /**
@@ -46,9 +63,8 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        $product = Product::findOrFail($id);
         return view('products.show', compact('product'));
     }
 
@@ -58,9 +74,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        return view('products.edit', compact('product'));
     }
 
     /**
