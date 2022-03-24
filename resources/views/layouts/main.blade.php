@@ -10,13 +10,13 @@
 </head>
 
 <body>
-    @include('includes.header')
-    
-    <main>
-        @yield('content')
-    </main>
-
+    <div class="wrapper d-flex flex-column">
+        @include('includes.header')
+        <main class="flex-grow-1">
+            @yield('content')
+        </main>
     <script src="{{ asset('js/app.js') }}"></script>
+    </div>
 </body>
 
 </html>
