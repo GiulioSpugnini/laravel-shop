@@ -11,7 +11,7 @@
                     </ul>
                 </div>
             @endif
-            @if ($product->exists)
+            @if ($product-> exists)
                 <form class="d-flex flex-wrap align-items-center justify-content-between"
                     action="{{ route('products.update', $product->id) }}" method="POST" novalidate>
                     @method('PUT')
