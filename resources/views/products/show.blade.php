@@ -1,7 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-    <div>
+   <main>
+    <div class="container">
         <figure>
             <img src="{{ $product->image }}" alt="">
         </figure>
@@ -10,4 +11,5 @@
         <div>{{ $product->price }}</div>
         <a href="{{ route('products.index') }}">Home</a>
     </div>
+   </main>
 @endsection
