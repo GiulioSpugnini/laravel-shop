@@ -11243,6 +11243,19 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.bg-header {
+  background-color: steelblue;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.8);
+}
+
+.bg-home {
+  background: linear-gradient(180deg, #20b2aa 0%, #fff 100%);
+}
+
+.bg-products {
+  background-color: #bdbdbd;
+}
+
 .wrapper {
   min-height: 100vh;
 }
@@ -11251,12 +11264,16 @@ main {
   min-height: calc(100vh - 80px);
 }
 
-.product-card {
-  height: 200px;
+body {
+  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Rubik Mono One", sans-serif;
 }
 
-header {
-  height: 80px;
+.product-card {
+  min-height: 250px;
 }
 
 #welcome {

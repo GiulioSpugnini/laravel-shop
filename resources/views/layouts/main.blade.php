@@ -12,10 +12,10 @@
 <body>
     <div class="wrapper d-flex flex-column">
         @include('includes.header')
-        <main class="flex-grow-1">
+        <main class="flex-grow-1 bg-products">
             @yield('content')
         </main>
-    <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
     </div>
 </body>
 
