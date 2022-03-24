@@ -18,7 +18,7 @@
                 data-name="{{ $product->series }}">
                 @csrf
                 @method('delete')
-
+                <a class="btn btn-sm btn-info" href="{{ route('products.edit', $product->id)}}">Modifica</a>
                 <input type="submit" value="Cancella" class="btn btn-sm btn-danger shadow-sm">
             </form>
 
