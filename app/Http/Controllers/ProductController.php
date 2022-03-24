@@ -41,7 +41,7 @@ class ProductController extends Controller
     public function store(Request $request, Product $product)
     {
         $request->validate([
-            'name' => ['required','string','min:1', Rule::unique('products')->ignore($product->id)],
+            'name' => ['required', 'string', 'min:1', Rule::unique('products')->ignore($product->id)],
             'description' => 'required|string|min:3 max:50',
             'price' => 'required|numeric|min:0',
             'image' => 'required|string|nullable',
@@ -54,7 +54,6 @@ class ProductController extends Controller
         $product->save();
 
         return redirect()->route('products.show', $product);
-
     }
 
     /**
@@ -89,7 +88,7 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $request->validate([
-            'name' => ['required','string','min:1', Rule::unique('products')->ignore($product->id)],
+            'name' => ['required', 'string', 'min:1', Rule::unique('products')->ignore($product->id)],
             'description' => 'required|string|min:3 max:50',
             'price' => 'required|numeric|min:0',
             'image' => 'required|string|nullable',
