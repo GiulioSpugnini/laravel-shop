@@ -1,43 +1,14 @@
 @extends('layouts.main')
 
 @section('content')
-<<<<<<< HEAD
-    <a class="btn btn-sm btn-success" href="{{ route('products.create') }}">aggiungi</a>
-=======
     <div class="container">
+        <div class="d-flex justify-content-end">
+            <a class="btn btn-sm btn-success mb-3" href="{{ route('products.create') }}">Aggiungi</a>
+        </div>
         <div id="product-gallery" class="row g-5">
             @foreach ($products as $product)
-            @include('includes.card')
+                @include('includes.card')
             @endforeach
         </div>
     </div>
-@endsection
-    <a class="btn btn-sm btn-success"  href="{{ route('products.create') }}">aggiungi</a>
->>>>>>> 8124fefc22918e3602764e22631ff29b48dcf4a0
-    <ul>
-        @foreach ($products as $product)
-            <li>
-                <figure>
-                    <img src="{{ $product->image }}" alt="">
-                </figure>
-                <h2>{{ $product->name }}</h2>
-                <p>{{ $product->description }}</p>
-                <div>{{ $product->price }}</div>
-
-                {{-- Links --}}
-                <div class="d-flex align-items-center">
-                    <a href="{{ route('products.show', ['product' => $product->id]) }}">Dettagli</a>
-
-                    {{-- Destroy Form --}}
-                    <form action="{{ route('products.destroy', $product->id) }}" method="post"
-                        class="delete-form my-3 ms-2" data-name="{{ $product->series }}">
-                        @csrf
-                        @method('delete')
-
-                        <input type="submit" value="Cancella" class="btn btn-sm btn-danger shadow-sm">
-                    </form>
-                </div>
-            </li>
-        @endforeach
-    </ul>
 @endsection
