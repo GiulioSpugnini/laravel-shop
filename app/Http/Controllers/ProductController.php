@@ -28,7 +28,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $product = new Product();
+        return view('products.create', compact('product'));
     }
 
     /**
